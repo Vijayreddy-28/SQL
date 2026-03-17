@@ -18,8 +18,7 @@ Filter records based on conditions and sort the results using SQL queries.
 
 ### Retrieve employees whose salary is between 40,000 and 60,000
 
-![Output](images/q1_output.png)
-**Image Dimensions:** 800px × 600px
+![Output](<img src="images/q1_output.png" alt="Output" width="400" height="300">)
 
 ---
 
