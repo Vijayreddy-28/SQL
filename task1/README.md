@@ -12,5 +12,8 @@ SELECT * FROM Employee;
 ## Files
 - task1.sql
 
-## Result
-Shows all employee records.
+## Output
+
+Below is the result of the query:
+
+![Output](files/output.png)
