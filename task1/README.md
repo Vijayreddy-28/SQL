@@ -16,4 +16,4 @@ SELECT * FROM Employee;
 
 Below is the result of the query:
 
-![output](task1/output.png)
+![Output](SQL/task1/files/output.png)
