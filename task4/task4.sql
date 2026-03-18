@@ -5,7 +5,7 @@ use SQL_Tasks;
 
 -- creating a Customers table
 CREATE TABLE Customers(
-	   CustomerID INT PRIMARY KEY,
+	CustomerID INT PRIMARY KEY,
     FirstName VARCHAR(50) NOT NULL,
     LastName VARCHAR(50) NOT NULL,
     Email VARCHAR(100) NOT NULL,
@@ -14,7 +14,7 @@ CREATE TABLE Customers(
 
 -- creating a Orders table
 CREATE TABLE Orders(
-	   OrderID INT PRIMARY KEY,
+	OrderID INT PRIMARY KEY,
     CustomerID INT NOT NULL,
     OrderDate DATE NOT NULL,
     TotalAmount INT NOT NULL CHECK (TotalAmount>=0),
@@ -52,14 +52,14 @@ SELECT * FROM Orders;
 
 -- Find all orders along with customer names where the order was placed in March 2026
 SELECT 
-	   CONCAT(c.FirstName," ",c.LastName) as emp_name 
+	CONCAT(c.FirstName," ",c.LastName) as emp_name 
     FROM Customers c INNER JOIN Orders O 
-	   USING(CustomerID) 
+	USING(CustomerID) 
     WHERE YEAR(o.OrderDate)=2026;
     
 -- Show all customers and the total amount they have spent; for customers with no orders, show total as 0.
 SELECT 
-	   c.FirstName as cust_name,
+	c.FirstName as cust_name,
     COALESCE(SUM(o.TotalAmount),0) as TotalAmount 
     FROM Customers c LEFT JOIN Orders o 
     USING(CustomerID) 
@@ -68,15 +68,15 @@ SELECT
 
 -- Identify customers who have never placed an order.
 SELECT 
-	   CONCAT(c.FirstName," ",c.LastName) as cust_name 
+	CONCAT(c.FirstName," ",c.LastName) as cust_name 
     FROM Customers c LEFT JOIN Orders o 
     USING(CustomerID) 
-	   WHERE o.CustomerID is NULL;
+	WHERE o.CustomerID is NULL;
     
 -- Identify customers who have placed more than one order and display their order count.
 SELECT 
-	   c.CustomerID,
-	   CONCAT(c.FirstName," ",c.LastName) as cust_name , 
+	c.CustomerID,
+	CONCAT(c.FirstName," ",c.LastName) as cust_name , 
     COUNT(*) AS order_count 
     FROM Customers c INNER JOIN Orders o 
     USING(CustomerID) 
