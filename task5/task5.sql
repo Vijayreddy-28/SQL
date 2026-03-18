@@ -6,7 +6,7 @@ SELECT * FROM Employee;
 
 -- Retrieve employees whose salary is greater than the average salary of all employees (non correlated)
 SELECT 
-	   CONCAT(first_name," ",last_name) as emp_name 
+	CONCAT(first_name," ",last_name) as emp_name 
     FROM Employee 
     WHERE salary > (
     SELECT 
@@ -15,7 +15,7 @@ SELECT
 
 -- Find employees who earn the second highest salary in the company (non correlated)
 SELECT 
-	   MAX(salary) as second_highest_salary 
+	MAX(salary) as second_highest_salary 
    	from Employee 
     WHERE salary < (
     SELECT MAX(salary) 
@@ -23,7 +23,7 @@ SELECT
     
 -- Retrieve employees whose salary is greater than the average salary of their department (correlated)
 SELECT 
-	   CONCAT(first_name," ",last_name) as emp_name 
+	CONCAT(first_name," ",last_name) as emp_name 
     FROM Employee e
     WHERE salary > (
     SELECT AVG(salary) 
@@ -33,7 +33,7 @@ SELECT
 -- Retrieve employees whose salary is the highest in their department  (correlated)
 SELECT *
     FROM Employee e
-	   WHERE salary = (
+	WHERE salary = (
     SELECT MAX(salary)
     FROM Employee
     WHERE department = e.department
