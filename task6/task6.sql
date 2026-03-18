@@ -31,33 +31,33 @@ SELECT * FROM orders;
 
 -- Find the total number of orders placed this month
 SELECT 
-	   * FROM Orders 
+	* FROM Orders 
     WHERE DATE_FORMAT(OrderDate, '%M')=DATE_FORMAT(NOW(), '%M');
 
 -- Extract month-wise orders
 SELECT 
-	   DATE_FORMAT(OrderDate, '%M') as Months,
+	DATE_FORMAT(OrderDate, '%M') as Months,
     SUM(TotalAmount) as TotalAmount 
-	   FROM Orders 
+	FROM Orders 
     GROUP BY DATE_FORMAT(OrderDate, '%M');
 
 -- Find all orders where the delivery took more than 5 days
 SELECT 
-	   OrderID,
+	OrderID,
     datediff(DeliveryDate,OrderDate) as days 
     FROM Orders 
     Where datediff(DeliveryDate,OrderDate) > 5;
 
 -- retrieves orders from last 7 days
 SELECT *
-	   FROM Orders
+	FROM Orders
    	WHERE OrderDate 
     BETWEEN CURRENT_DATE() - INTERVAL 7 DAY AND CURRENT_DATE();
  
  -- Orders in last 30 days
 SELECT *
-	   FROM Orders
-	   WHERE OrderDate >= DATE_ADD(CURRENT_DATE(), INTERVAL -30 DAY);
+	FROM Orders
+	WHERE OrderDate >= DATE_ADD(CURRENT_DATE(), INTERVAL -30 DAY);
 
 -- Converting total amount from int to decimal 
 SELECT 
