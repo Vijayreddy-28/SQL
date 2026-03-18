@@ -1,7 +1,7 @@
-# Task 4 - Multi-Table JOINs and HAVING Clause
+# Task 4 - Multi-Table JOINs
 
 ## Objective
-Combine data from two related tables using JOIN operations and filter results using the HAVING clause.
+Combine data from two related tables using JOIN operations
 
 ---
 
@@ -18,18 +18,18 @@ Combine data from two related tables using JOIN operations and filter results us
 
 ## Quries and output
 
-### Find all orders along with customer names where the order was placed in March 2026
+#### Find all orders along with customer names where the order was placed in March 2026
 
 ![Output](images/q1-output.png)
 
-### Show all customers and the total amount they have spent; for customers with no orders, show total as 0
+#### Show all customers and the total amount they have spent; for customers with no orders, show total as 0
 
 ![Output](images/q2-output.png)
 
-### Identify customers who have never placed an order
+#### Identify customers who have never placed an order
 
 ![Output](images/q3-output.png)
 
-### Identify customers who have placed more than one order and display their order count
+#### Identify customers who have placed more than one order and display their order count
 
 ![Output](images/q4-output.png)
