@@ -48,7 +48,7 @@ CREATE TABLE Orders (
 
 #### Converting total amount from int to decimal
 
-![Output](images/q5-output.png)
+![Output](images/q5-ouput.png)
 
 
 
