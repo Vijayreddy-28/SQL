@@ -1,6 +1,6 @@
 # Window Functions and Ranking in SQL
 
-## Project Overview
+## Task Overview
 This project demonstrates the use of **window functions** in SQL to perform calculations across a set of rows.  
 It focuses on ranking, partitioning data, and accessing adjacent row values using functions like `ROW_NUMBER()`, `RANK()`, `DENSE_RANK()`, `LEAD()`, and `LAG()`.
 
