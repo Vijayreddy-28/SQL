@@ -29,17 +29,22 @@ INSERT INTO Employee(emp_id,first_name,last_name,age,gender,salary,department) V
 SELECT 
 	COUNT(emp_id) as num_of_emp,
 	MAX(salary) as high_salary,
- MIN(salary) as low_salary, 
- AVG(age) as avg_age,
- SUM(salary) as sum_salary from Employee;
+ 	MIN(salary) as low_salary, 
+ 	AVG(age) as avg_age,
+ 	SUM(salary) as sum_salary from Employee;
     
 /*Find departments where the average salary is greater than 50,000*/
-SELECT department FROM Employee GROUP BY department HAVING AVG(salary) > 50000;
+SELECT 
+	department 
+	FROM Employee 
+	GROUP BY department 
+	HAVING AVG(salary) > 50000;
 
 /*Retrieve the highest-paid employee in each department*/
-SELECT department, first_name, salary
-FROM Employee
-WHERE (department, salary) IN (
+SELECT 
+	department, first_name, salary
+	FROM Employee
+	WHERE (department, salary) IN (
     SELECT department, MAX(salary)
     FROM Employee
     GROUP BY department
@@ -47,16 +52,16 @@ WHERE (department, salary) IN (
 
 /*Get the top 3 departments with the highest average salary*/
 SELECT 
-	 department,
-  ROUND(AVG(salary),0) as salary 
-  FROM Employee 
-  GROUP BY department 
-  ORDER BY AVG(salary) DESC LIMIT 3;
+	department,
+  	ROUND(AVG(salary),0) as salary 
+  	FROM Employee 
+  	GROUP BY department 
+  	ORDER BY AVG(salary) DESC LIMIT 3;
 
 /*Count the number of employees in each department whose age is above 30*/
 SELECT 
-  department,
-  COUNT(*) as num_emp 
-  FROM Employee 
-  WHERE age>30 
-  GROUP BY department;  
+  	department,
+  	COUNT(*) as num_emp 
+  	FROM Employee 
+  	WHERE age>30 
+  	GROUP BY department;  
