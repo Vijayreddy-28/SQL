@@ -81,3 +81,10 @@ SELECT
     FROM Customers c INNER JOIN Orders o 
     USING(CustomerID) 
     GROUP BY c.CustomerID HAVING COUNT(*)>1;
+
+-- Retrive the order detail of the customer who don't have customer details
+SELECT 
+	o.OrderID,o.OrderDate 
+    FROM Customers c RIGHT JOIN Orders o 
+    USING(CustomerID) 
+    WHERE c.CustomerID is NULL;
