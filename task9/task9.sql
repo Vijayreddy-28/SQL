@@ -2,6 +2,7 @@
 CREATE DATABASE SQL_Tasks;
 use SQL_Tasks;
 
+
 -- number of orders and total amount between the given dates
 DELIMITER $$
 CREATE PROCEDURE Order_summary(IN StartDate DATE,IN EndDate DATE)
@@ -14,6 +15,7 @@ BEGIN
 END $$
 DELIMITER ;
 CALL Order_summary("2026-01-10","2026-03-02");
+
 
 -- Create a procedure that accepts a CustomerID and returns the total number of orders for that customer.
 DELIMITER $$
@@ -28,6 +30,7 @@ END $$
 DELIMITER ;
 CALL GetCustTotalOrders(1);
 
+
 -- count the total number of employees in a given department
 DELIMITER $$
 CREATE PROCEDURE CountEmployeesByDept(IN p_Department VARCHAR(50))
@@ -39,6 +42,7 @@ END $$
 DELIMITER ;
 CALL CountEmployeesByDept("IT");
 
+
 -- Create a function that takes FirstName and LastName and returns the full name
 DELIMITER $$
 CREATE FUNCTION GetFullName(FirstName VARCHAR(50), LastName VARCHAR(50))
@@ -48,7 +52,10 @@ CREATE FUNCTION GetFullName(FirstName VARCHAR(50), LastName VARCHAR(50))
 		RETURN CONCAT(FirstName, ' ', LastName);
 	END $$
 DELIMITER ;
-SELECT GetFullName(first_name, last_name) AS FullName FROM Employee;
+SELECT 
+	GetFullName(first_name, last_name) AS FullName 
+	FROM Employee;
+
 
 -- create a scalar User-Defined Function (UDF) in MySQL to check eligibility based on age
 DELIMITER $$
@@ -61,6 +68,6 @@ END $$
 DELIMITER ;
 SELECT 
 	GetFullName(first_name, last_name) AS EmpName,age,
- CheckEligibility(age) AS Eligible
+ 	CheckEligibility(age) AS Eligible
 	FROM Employee;
  
