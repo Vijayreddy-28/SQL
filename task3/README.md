@@ -1,20 +1,14 @@
-# Task 3 - Aggregate Functions and Grouping
+# Task 3 
 
-## Objective
-Summarize Employee data using aggregate functions and grouping. Optionally, filter grouped results using the HAVING clause.
+## Simple Aggregation and Grouping
 
----
+**Objective:**  
+Summarize data using aggregate functions and grouping.
 
-## Requirements
-
-- Use aggregate functions such as:
-  - `COUNT()` → to count rows
-  - `SUM()` → to calculate totals
-  - `AVG()` → to calculate averages
-  - `MIN()` → to find minimum value
-  - `MAX()` → to find maximum value
-- Used `GROUP BY` to group data by a column
-- Used `HAVING` to filter groups
+**Requirements:**  
+- Write a query that uses aggregate functions such as `COUNT()`, `SUM()`, or `AVG()` to calculate totals or averages.  
+- Use the `GROUP BY` clause to aggregate data by a specific column (e.g., count the number of employees per department).  
+- Optionally, filter grouped results using the `HAVING` clause.
 
 ---
 
