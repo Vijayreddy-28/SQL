@@ -1,6 +1,6 @@
 # Common Table Expressions (CTEs) and Recursive Queries in SQL
 
-## Project Overview
+## Task Overview
 This project demonstrates the use of **Common Table Expressions (CTEs)** in SQL to simplify complex queries and handle hierarchical or sequential data.  
 It covers **non-recursive CTEs** for readability and **recursive CTEs** for generating sequences or hierarchical structures.
 
