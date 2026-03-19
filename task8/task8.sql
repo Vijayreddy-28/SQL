@@ -4,18 +4,18 @@ use SQL_Tasks;
 
 -- Employees earning above department average (Non Recursive)
 WITH DeptAvg AS(
-	   SELECT department,
+	SELECT department,
     AVG(salary) as avg_sal
     FROM Employee 
     GROUP BY department)
 SELECT 
-	   CONCAT(e.first_name," ",e.last_name) as emp_name,
+	CONCAT(e.first_name," ",e.last_name) as emp_name,
     e.department,e.salary,d.avg_sal
     FROM Employee e JOIN DeptAvg d 
     USING(department) 
     WHERE e.salary>d.avg_sal;
     
--- Find total salary and employees count per department
+-- Find total salary and employees count per department (Non Recursive)
 WITH DeptSummary AS(
 	  SELECT 
 	  department,
@@ -29,10 +29,11 @@ SELECT * FROM DeptSummary;
 WITH RECURSIVE cte_name AS(
 	 SELECT 1 as n
 	 UNION ALL
-	 SELECT n+1 FROM cte_name WHERE n<10)
+	 SELECT n+1 FROM cte_name WHERE n<10
+)
  SELECT n as numbers FROM cte_name;
 
--- Even Numbers 2 to 20
+-- Even Numbers 2 to 20 (Recursive)
 WITH RECURSIVE EvenNumbers AS (
     SELECT 2 AS num
     UNION ALL
