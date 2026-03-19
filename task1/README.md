@@ -1,17 +1,14 @@
-# Task 1 - SQL Basics
+# Task 1 
 
-## Objective
-Create a table, insert data, and view the data using MySQL.
+## Creating and Populating Tables
 
-## Steps
-1. Create Employee table  
-2. Insert sample data  
-3. Run:
-SELECT * FROM Employee;
+**Objective:**  
+Set up a simple table, insert data, and retrieve that data using basic queries.
 
-## Files
-- task1.sql
-
+**Requirements:**  
+- Use `CREATE TABLE` to define a table (e.g., appropriate data types and constraints).  
+- Populate the table using `INSERT INTO` with multiple rows of sample data.  
+- Execute a basic `SELECT * FROM TableName;` query to verify the data insertion.
 ## Output
 
 Below is the result of the query:
