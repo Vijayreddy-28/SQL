@@ -27,3 +27,46 @@ VALUES
 SELECT * from Employee1;
 
 	
+----- TASK 2 -----
+
+/*Retrieve employees whose salary is between 40,000 and 60,000 without using 
+between keyword*/
+SELECT distinct emp_id  FROM Employee1 WHERE salary>=40000 AND salary<=60000;
+
+/*Get employees full name whose age is between 25 and 35 AND department is IT*/
+SELECT DISTINCT emp_id,
+    CONCAT(first_name," ",last_name) as Employee_name 
+    FROM Employee1 
+    WHERE age BETWEEN 25 AND 35 AND department = "IT";
+
+
+----- TASK 9 -----
+
+/*repeat full name multiple times using SQL functions*/
+
+DELIMITER $$
+
+CREATE FUNCTION GetFullNameLoop(
+    FirstName VARCHAR(50),
+    LastName VARCHAR(50),
+    times INT
+)
+RETURNS VARCHAR(500)
+DETERMINISTIC
+BEGIN
+    DECLARE result VARCHAR(500) DEFAULT '';
+    DECLARE i INT DEFAULT 1;
+
+    WHILE i <= times DO
+        SET result = CONCAT(result, FirstName, ' ', LastName, ' | ');
+        SET i = i + 1;
+    END WHILE;
+
+    RETURN result;
+END $$
+
+DELIMITER ;
+
+SELECT GetFullNameLoop('Vijay', 'Reddy', 3);
+
+
